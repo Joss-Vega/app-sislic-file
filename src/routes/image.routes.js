@@ -23,11 +23,11 @@ router.post('/images/upload', (req, res) => {
             return res.send(err);
         }
         console.log(req.file);
-        res.send(process.env.URI_FILE + "/upload/" + req.file.originalname);
+        res.send({ "url": process.env.URI_FILE + "/upload/" + req.file.originalname });
     });
 });
 router.get('/', (req, res) => {
-    res.send({"response":"Fuciona Correctamente"});
+    res.send({ "response": "Fuciona Correctamente" });
 });
 
 
